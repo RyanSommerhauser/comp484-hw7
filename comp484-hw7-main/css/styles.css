@@ -8,6 +8,15 @@
 #2b2b2b  - Dark charcoal (body text)
 */
 
+/* Box Model Fix
+------------------------------------*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 /* Global styles
 ------------------------------------*/
 body {
@@ -18,17 +27,58 @@ body {
     font-size: 16px;
     line-height: 1.6;
 }
+/*content wrap on all sections*/
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
 
 /* Header & Footer
 ------------------------------------*/
-.site-header,
-.site-footer {
+.site-header {
     background-color: #1f2a44; /* dark blue */
     color: #ffffff;            /* white text */
     padding: 20px;
 }
 
+.site-header h1,
+.site-header h2 {
+    margin: 0;
+}
 
+/* Columns
+------------------------------------*/
+.column-narrow {
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+    min-height: 175px;
+}
+
+.column-wide {
+    width: 70%;
+    float: left;
+    min-height: 225px;
+}
+
+.site-footer {
+    background-color: #1f2a44; /* dark blue */
+    color: #ffffff;            /* white text */
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info a {
+    padding: 10px;
+    display: inline-block;
+}
+
+/*Images*/
+.profile-img {
+    border-radius: 50%;
+}
 
 /* Main content wrapper */
 main {
@@ -50,6 +100,14 @@ main {
     border-radius: 6px;
 }
 
+/* Block Styles */
+.project-block,
+.job-block,
+.education-block {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
 /* Sub-content blocks (jobs, schools, projects) */
 .projects p,
 .work-experience p,
@@ -58,6 +116,8 @@ main {
     padding: 10px;
     border-radius: 4px;
 }
+
+
 
 /* Headings
 ------------------------------------*/
@@ -72,7 +132,7 @@ h2 {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
-    margin-top: 1.5em;
+    margin-top: 0;
     margin-bottom: 0.5em;
 }
 
